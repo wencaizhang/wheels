@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tab 切换</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			list-style: none;
+		}
+		.dib {
+			display: inline-block;	
+		}
+		.hidden {
+			display: none;
+		}
+		.tab-container {
+			display: inline-block;	
+			margin: 100px auto;
+			padding: 20px;
+			border: 1px solid #ccc;
+			width: 200px;
+		}
+		.tab-header {
+			font-size: 0;
+		}
+		.tab-header li {
+			display: inline-block;
+			margin-left: -1px;
+			width: 33.33%;
+			text-align: center;
+			box-sizing: border-box;
+			font-size: 20px;
+			border-left: 1px solid #ccc;
+			cursor: pointer;
+		}
+		.tab-header li.current{
+			background-color: #ccc;
+		}
+		.tab-header li:hover {
+			background-color: #ddd;
+		}
+		.tab-content {
+			position: relative;
+			height: 400px;
+		}
+		.tab-content .list {
+			width: 100%;	
+			padding: 10px 0;
+		}
+		.tab-content .list li {
+			text-align: center;
+		}
+		.tab-content>li {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="tab-container">
+		<ul class="tab-header">
+			<li class="current">Tab1</li>
+			<li>Tab2</li>
+			<li>Tab3</li>
+		</ul>
+		<ul class="tab-content">
+			<li class="dib">
+				<ul class="list">
+					<li>Tab1</li>
+					<li>Tab1</li>
+					<li>Tab1</li>
+				</ul>
+			</li>
+			<li class="dib hidden">
+				<ul class="list">
+					<li>Tab2</li>
+					<li>Tab2</li>
+					<li>Tab2</li>
+				</ul>
+			</li>
+			<li class="dib hidden">
+				<ul class="list">
+					<li>Tab3</li>
+					<li>Tab3</li>
+					<li>Tab3</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<script>
+		var tabBtns = document.querySelectorAll('.tab-header li');
+		var tabContents = document.querySelectorAll('.tab-content>li');
+
+		tabBtns.forEach(function(item, index) {
+			tabBtns[index].addEventListener('click', function () {
+				tabContents.forEach(function (item) {
+					item.classList.add('hidden')
+				})
+				tabBtns.forEach(function (item) {
+					item.classList.remove('current')
+				})
+				tabContents[index].classList.remove('hidden')
+				this.classList.add('current')
+			})
+		})
+
+	</script>
+</body>
+</html>
