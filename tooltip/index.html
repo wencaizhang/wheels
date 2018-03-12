@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>表单验证提示信息</title>
+    <link rel="stylesheet" href="styles/tooltip.css">
+    <style>
+        #div1 {
+            width: 200px;
+            height: 150px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        input {
+            margin-top: 10px;
+            width: 200px;
+            height: 30px;
+        }
+
+        .side-tool {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 9
+        }
+
+        .side-tool>ul>li {
+            border: 1px solid #dcdcdc;
+            list-style: none;
+        }
+
+        .side-tool>ul .button {
+            text-decoration: none;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            color: #000;
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <input id="input1" type="text" data-msg="请输入用户名" />
+        <input id="input2" type="text" />
+        <input id="input3" type="text" />
+        <input id="input4" type="text" />
+    </div>
+    <div class="side-tool">
+        <ul>
+            <li><a class="button" data-msg="回到顶部" href="javascript:;">top</a></li>
+            <li><a class="button" data-msg="分享文章" href="javascript:;">share</a></li>
+        </ul>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="./scripts/tooltip.js"></script>
+    <script>
+        var message = ["此项目不能为空", "您填写的邮箱地址不正确", "两次密码输入不一致"];
+        // Tooltip('#input1', {
+        //     message: '请输入用户名',
+        //     trigger: 'focus',
+        //     placement: 'top',
+        //     bgColor: 'red'
+        // })
+        // Tooltip('#input2', {
+        //     message: '请输入密码',
+        //     trigger: 'focus',
+        //     placement: 'right'
+        // })
+        // Tooltip('#input3', {
+        //     message: 'Hello World',
+        //     trigger: 'focus',
+        //     placement: 'left'
+        // })
+        // Tooltip('#input4', {
+        //     message: 'Hello World',
+        //     trigger: 'focus',
+        //     placement: 'bottom'
+        // })
+        $('#input1').Tooltip({
+            message: '请输入用户名',
+            trigger: 'focus',
+            placement: 'top',
+            bgColor: 'red'
+        })
+        $('#input2').Tooltip({
+            message: '<h1>请输入密码</h1>',
+            trigger: 'focus',
+            html: true,
+            placement: 'right'
+        })
+        $('#input3').Tooltip({
+            message: 'Hello World',
+            trigger: 'focus',
+            placement: 'left'
+        })
+        $('#input4').Tooltip({
+            message: 'Hello World',
+            trigger: 'focus',
+            placement: 'bottom'
+        })
+        $(".button").each(function () {
+            $(this).Tooltip({
+                message: $(this).attr('data-msg'),
+                placement: 'left', 
+                trigger: 'click' 
+            })
+        })
+    </script>
+</body>
+
+</html>

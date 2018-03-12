@@ -1,0 +1,89 @@
+
+/*验证标签式提示信息样式*/
+
+.tooltip {
+    position: absolute;
+    z-index: 9;
+    height: auto;
+    max-width: 200px;
+    /* display: none; */
+}
+
+.tooltip-text {
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: #117da3;
+    zoom: 1;
+    color: #FFF;
+}
+
+.tooltip-placement  {
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    width: 0px;
+    height: 0px;
+    border: 5px solid transparent;
+}
+.placement-right {
+    left: 0;
+    top: 50%;
+    margin-top: -5px;
+    margin-left: -10px;
+}
+.placement-left {
+    right: 0;
+    top: 50%;
+    margin-top: -5px;
+    margin-right: -10px;
+}
+.placement-top {
+    left: 50%;
+    bottom: 0;
+    margin-bottom: -10px;
+    margin-left: -5px;
+}
+.placement-bottom {
+    left: 50%;
+    top: 0;
+    margin-top: -10px;
+    margin-left: -5px;
+}
+
+/* theme */
+.tooltip-text {
+    background-color: #000;
+    color: #FFF;
+}
+
+.placement-right {
+    border-right-color: #000;
+}
+.placement-left {
+    border-left-color: #000;
+}
+.placement-top {
+    border-top-color: #000;
+}
+.placement-bottom {
+    border-bottom-color: #000;
+}
+/* theme2 */
+.tooltip-text {
+    background-color: lightblue;
+    color: blue;
+}
+
+.placement-right {
+    border-right-color: lightblue;
+}
+.placement-left {
+    border-left-color: lightblue;
+}
+.placement-top {
+    border-top-color: lightblue;
+}
+.placement-bottom {
+    border-bottom-color: lightblue;
+}

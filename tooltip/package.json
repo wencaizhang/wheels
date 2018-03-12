@@ -1,0 +1,20 @@
+{
+  "name": "zToolTip",
+  "version": "1.0.0",
+  "description": "demo: [http://wencaizhang.com/zToolTip](http://wencaizhang.com/zToolTip)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wencaizhang/zToolTip.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wencaizhang/zToolTip/issues"
+  },
+  "homepage": "https://github.com/wencaizhang/zToolTip#readme"
+}
