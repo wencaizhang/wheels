@@ -40,10 +40,71 @@
             text-align: center;
             display: block;
         }
+
+        .demo {
+            font-size: 0;
+        }
+        .demo button {
+            display: inline-block;
+            text-align: center;
+            width: 110px;
+            height: 32px;
+            margin-right: 10px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            font-weight: 400;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            white-space: nowrap;
+            font-size: 14px;
+            border-radius: 4px;
+            background: #fff;
+        }
+        /* .demo button:focus {
+            border-width: 1px;
+        } */
+        .demo-top,
+        .demo-bottom {
+            margin-left: 120px;
+        }
+        .demo-left {
+            float: left;
+        }
+        .demo-right {
+            margin-left: 480px;
+        }
+        .demo-left button,
+        .demo-right button {
+            display: block;
+        }
     </style>
 </head>
 
 <body>
+    <div class="demo">
+        <div class="demo-top">
+            <button>topLeft</button>
+            <button>top</button>
+            <button>topRight</button>
+        </div>
+        <div class="demo-left">
+            <button>leftTop</button>
+            <button>left</button>
+            <button>leftButton</button>
+        </div>
+        <div class="demo-right">
+            <button>rightTop</button>
+            <button>right</button>
+            <button>rightBottom</button>
+        </div>
+        <div class="demo-bottom">
+            <button>bottomLeft</button>
+            <button>bottom</button>
+            <button>bottomRight</button>
+        </div>
+    </div>
     <div id="div1">
         <input id="input1" type="text" data-msg="请输入用户名" />
         <input id="input2" type="text" />
@@ -52,8 +113,12 @@
     </div>
     <div class="side-tool">
         <ul>
-            <li><a class="button" data-msg="回到顶部" href="javascript:;">top</a></li>
-            <li><a class="button" data-msg="分享文章" href="javascript:;">share</a></li>
+            <li>
+                <a class="button" data-msg="回到顶部" href="javascript:;">top</a>
+            </li>
+            <li>
+                <a class="button" data-msg="分享文章" href="javascript:;">share</a>
+            </li>
         </ul>
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
@@ -106,8 +171,8 @@
         $(".button").each(function () {
             $(this).Tooltip({
                 message: $(this).attr('data-msg'),
-                placement: 'left', 
-                trigger: 'click' 
+                placement: 'left',
+                trigger: 'click'
             })
         })
     </script>
