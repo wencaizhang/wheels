@@ -22,7 +22,7 @@
         }
 
         .demo {
-            width: 400px;
+            width: 500px;
             margin: 50px auto;
         }
 
@@ -58,13 +58,22 @@
             background-color: #01cd78;
             background-clip: content-box;
         }
-
         input[type="radio"] {
             position: absolute;
             clip: rect(0, 0, 0, 0);
         }
 
+        input[type="radio"]:disabled+label {
+            cursor: not-allowed!important;
+            color: #e2e2e2;
+        }
+        input[type="radio"]:disabled+label::before {
+            border-color: #e2e2e2;
+            cursor: not-allowed;
+        }
+
         /* ===================== */
+
         .skills input[type="checkbox"]+label::before {
             content: "\a0"; /*不换行空格*/
             display: inline-block;
@@ -119,6 +128,14 @@
             position: absolute;
             clip: rect(0, 0, 0, 0);
         }
+        input[type="checkbox"]:disabled+label {
+            cursor: not-allowed!important;
+            color: #e2e2e2;
+        }
+        input[type="checkbox"]:disabled+label::before {
+            border-color: #e2e2e2;
+            cursor: not-allowed;
+        }
         /* ===================== */
     </style>
 </head>
@@ -136,6 +153,10 @@
                     <input id="sex-women" type="radio" name="sex" value="0">
                     <label for="sex-women">女</label>
                 </li>
+                <li>
+                    <input id="sex-other" type="radio" name="sex" value="-1" disabled>
+                    <label for="sex-other">其他</label>
+                </li>
             </ul>
         </div>
         <div class="container checkbox-container skills">
@@ -152,6 +173,10 @@
                 <li>
                     <input id="skill-JavaScript" type="checkbox" name="skill" value="JavaScript">
                     <label for="skill-JavaScript">JavaScript</label>
+                </li>
+                <li>
+                    <input id="skill-Copy" type="checkbox" name="skill" value="Copy" disabled>
+                    <label for="skill-Copy">Copy</label>
                 </li>
             </ul>
         </div>
