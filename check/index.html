@@ -29,16 +29,20 @@
         .demo li {
             padding: 0 10px;
         }
+
         .demo .container {
             margin-bottom: 20px;
         }
+
         .demo label {
             cursor: pointer;
         }
+
         /* ===================== */
 
         input[type="radio"]+label::before {
-            content: "\a0"; /*不换行空格*/
+            content: "\a0";
+            /*不换行空格*/
             display: inline-block;
             position: relative;
             bottom: 0.1em;
@@ -58,6 +62,7 @@
             background-color: #01cd78;
             background-clip: content-box;
         }
+
         input[type="radio"] {
             position: absolute;
             clip: rect(0, 0, 0, 0);
@@ -67,6 +72,7 @@
             cursor: not-allowed!important;
             color: #e2e2e2;
         }
+
         input[type="radio"]:disabled+label::before {
             border-color: #e2e2e2;
             cursor: not-allowed;
@@ -75,7 +81,8 @@
         /* ===================== */
 
         .skills input[type="checkbox"]+label::before {
-            content: "\a0"; /*不换行空格*/
+            content: "\a0";
+            /*不换行空格*/
             display: inline-block;
             position: relative;
             bottom: 0.2em;
@@ -100,9 +107,12 @@
             position: absolute;
             clip: rect(0, 0, 0, 0);
         }
+
         /* ===================== */
+
         .interests input[type="checkbox"]+label::before {
-            content: "\a0"; /*不换行空格*/
+            content: "\a0";
+            /*不换行空格*/
             display: inline-block;
             position: relative;
             bottom: 0.2em;
@@ -128,14 +138,17 @@
             position: absolute;
             clip: rect(0, 0, 0, 0);
         }
+
         input[type="checkbox"]:disabled+label {
             cursor: not-allowed!important;
             color: #e2e2e2;
         }
+
         input[type="checkbox"]:disabled+label::before {
             border-color: #e2e2e2;
             cursor: not-allowed;
         }
+
         /* ===================== */
     </style>
 </head>
