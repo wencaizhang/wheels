@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>开关按钮 switch</title>
+    <style type="text/css">
+        .demo {
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        /* =============== */
+
+        .chooseBtn {
+            display: none;
+        }
+
+        .choose-label {
+            box-shadow: #ccc 0px 0px 0px 1px;
+            width: 80px;
+            height: 40px;
+            display: inline-block;
+            border-radius: 40px;
+            position: relative;
+            background-color: #bdbdbd;
+            overflow: hidden;
+        }
+
+        .choose-label:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            border-radius: 40px;
+            background-color: #fff;
+            z-index: 40;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        .chooseBtn:checked+label.choose-label:before {
+            left: 40px;
+        }
+
+        .chooseBtn:checked+label.choose-label {
+            background-color: #51ccee;
+        }
+
+        /* ======================== */
+
+        #toggle-button {
+            display: none;
+        }
+
+        .button-label {
+            position: relative;
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            background-color: #ccc;
+            box-shadow: #ccc 0px 0px 0px 2px;
+            border-radius: 30px;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        .circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        .button-label .text {
+            line-height: 30px;
+            font-size: 18px;
+            text-shadow: 0 0 2px #ddd;
+        }
+
+        .on {
+            color: #fff;
+            display: none;
+            text-indent: 10px;
+        }
+
+        .off {
+            color: #fff;
+            display: inline-block;
+            text-indent: 34px;
+        }
+
+        .button-label .circle {
+            left: 0;
+            transition: all 0.3s;
+        }
+
+        #toggle-button:checked+label.button-label .circle {
+            left: 50px;
+        }
+
+        #toggle-button:checked+label.button-label .on {
+            display: inline-block;
+        }
+
+        #toggle-button:checked+label.button-label .off {
+            display: none;
+        }
+
+        #toggle-button:checked+label.button-label {
+            background-color: #51ccee;
+        }
+
+        /* ======================== */
+    </style>
+</head>
+
+<body>
+    <div class="demo">
+        <div class="switch-btn">
+            <input type="checkbox" name="sex" id="male" class="chooseBtn" />
+            <label for="male" class="choose-label"></label>
+        </div>
+        <div class="switch-btn">
+            <input type="checkbox" id="toggle-button" name="switch">
+            <label for="toggle-button" class="button-label">
+                <span class="circle"></span>
+                <span class="text on">ON</span>
+                <span class="text off">OFF</span>
+            </label>
+        </div>
+    </div>
+</body>
+
+</html>
