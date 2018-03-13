@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>radio and checkbox</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul,
+        li {
+            display: inline-block;
+        }
+
+        .demo {
+            width: 400px;
+            margin: 50px auto;
+        }
+
+        .demo li {
+            padding: 0 10px;
+        }
+        .demo .container {
+            margin-bottom: 20px;
+        }
+        .demo label {
+            cursor: pointer;
+        }
+        /* ===================== */
+
+        input[type="radio"]+label::before {
+            content: "\a0"; /*不换行空格*/
+            display: inline-block;
+            position: relative;
+            bottom: 0.1em;
+            vertical-align: middle;
+            font-size: 12px;
+            width: 1em;
+            height: 1em;
+            margin-right: .4em;
+            border-radius: 50%;
+            border: 1px solid #01cd78;
+            text-indent: .15em;
+            line-height: 1;
+            padding: .3em;
+        }
+
+        input[type="radio"]:checked+label::before {
+            background-color: #01cd78;
+            background-clip: content-box;
+        }
+
+        input[type="radio"] {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        /* ===================== */
+        .skills input[type="checkbox"]+label::before {
+            content: "\a0"; /*不换行空格*/
+            display: inline-block;
+            position: relative;
+            bottom: 0.2em;
+            vertical-align: middle;
+            font-size: 12px;
+            width: 1.3em;
+            height: 1.3em;
+            text-align: center;
+            margin-right: .4em;
+            border: 1px solid #01cd78;
+            text-indent: .15em;
+            line-height: 1.3;
+            color: #01cd78;
+        }
+
+        .skills input[type="checkbox"]:checked+label::before {
+            content: "\2714";
+            background-clip: content-box;
+        }
+
+        .skills input[type="checkbox"] {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+        }
+        /* ===================== */
+        .interests input[type="checkbox"]+label::before {
+            content: "\a0"; /*不换行空格*/
+            display: inline-block;
+            position: relative;
+            bottom: 0.2em;
+            vertical-align: middle;
+            font-size: 12px;
+            width: 1.3em;
+            height: 1.3em;
+            text-align: center;
+            margin-right: .4em;
+            border: 1px solid #01cd78;
+            text-indent: .15em;
+            line-height: 1.3;
+            color: #fff;
+        }
+
+        .interests input[type="checkbox"]:checked+label::before {
+            content: "\2714";
+            background-clip: content-box;
+            background-color: #01cd78;
+        }
+
+        .interests input[type="checkbox"] {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+        }
+        /* ===================== */
+    </style>
+</head>
+
+<body>
+    <div class="demo">
+        <div class="container radio-container">
+            <span>性别：</span>
+            <ul class="radio-options">
+                <li>
+                    <input id="sex-man" type="radio" name="sex" value="1" checked>
+                    <label for="sex-man">男</label>
+                </li>
+                <li>
+                    <input id="sex-women" type="radio" name="sex" value="0">
+                    <label for="sex-women">女</label>
+                </li>
+            </ul>
+        </div>
+        <div class="container checkbox-container skills">
+            <span>技能：</span>
+            <ul class="checkbox-options">
+                <li>
+                    <input id="skill-HTML" type="checkbox" name="skill" value="HTML" checked>
+                    <label for="skill-HTML">HTML</label>
+                </li>
+                <li>
+                    <input id="skill-CSS" type="checkbox" name="skill" value="CSS">
+                    <label for="skill-CSS">CSS</label>
+                </li>
+                <li>
+                    <input id="skill-JavaScript" type="checkbox" name="skill" value="JavaScript">
+                    <label for="skill-JavaScript">JavaScript</label>
+                </li>
+            </ul>
+        </div>
+        <div class="container checkbox-container interests">
+            <span>兴趣：</span>
+            <ul class="checkbox-options">
+                <li>
+                    <input id="skill-English" type="checkbox" name="skill" value="English">
+                    <label for="skill-English">English</label>
+                </li>
+                <li>
+                    <input id="skill-Coding" type="checkbox" name="skill" value="Coding" checked>
+                    <label for="skill-Coding">Coding</label>
+                </li>
+                <li>
+                    <input id="skill-Sleeping" type="checkbox" name="skill" value="Sleeping">
+                    <label for="skill-Sleeping">Sleeping</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
