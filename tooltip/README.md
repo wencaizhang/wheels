@@ -79,6 +79,6 @@ $.fn.pluginName = function() {
 
 参数 | 说明 | 类型 | 默认值
 ---|---|---|---
-`html` | 是否允许插入 html，如果您担心 XSS 攻击，请使用 text | boolean | false
+`html` | 是否允许插入 html，如果您担心 XSS 攻击，请使用默认值 `false` | boolean | `false`
 `trigger` | 触发行为，可选 `hover`/`focus`/`click` | string | `hover`
 `placement` | 气泡框位置，可选 `top` `left` `right` `bottom` `topLeft` `topRight` `bottomLeft` `bottomRight` `leftTop` `leftBottom` `rightTop` `rightBottom` | string | `top`

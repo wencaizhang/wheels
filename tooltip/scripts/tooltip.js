@@ -1,6 +1,7 @@
 ;(function ($, window, document, undefined) {
     var pluginName = "Tooltip",
     defaults = {
+        placement: 'top',
         trigger: 'hover',
         html: false
     }
@@ -38,40 +39,28 @@
             // 计算位置
             switch (self.settings.placement) {
                 case "topLeft":
-                    break;
                 case "top":
+                case "topRight":
                     hintLeft = objOffset.left + (objWidth - tipWidth) / 2;
                     hintTop  = objOffset.top  - tipHeight - 15;
                     break;
-                case "topRight ":
-                    break;
                 case "leftTop":
-                    break;
                 case "left":
+                case "leftBottom":
                     hintLeft = objOffset.left - tipWidth - 15;
                     hintTop  = objOffset.top  + (objHeight - tipHeight) / 2;
                     break;
-                case "leftBottom":
-                    break;
                 case "rightTop":
-                    hintLeft = objOffset.left + objWidth + 15;
-                    hintTop  = objOffset.top  + (objHeight - tipHeight) / 2;
-                    break;
                 case "right":
-                    hintLeft = objOffset.left + objWidth + 15;
-                    hintTop  = objOffset.top  + (objHeight - tipHeight) / 2;
-                    break;
                 case "rightBottom":
                     hintLeft = objOffset.left + objWidth + 15;
                     hintTop  = objOffset.top  + (objHeight - tipHeight) / 2;
                     break;
                 case "bottomLeft":
-                    break;
                 case "bottom":
+                case "bottomRight":
                     hintLeft = objOffset.left + (objWidth - tipWidth) / 2;
                     hintTop  = objOffset.top  + objHeight + 15;
-                    break;
-                case "bottomRight":
                     break;
                 default:
                     break;
@@ -82,13 +71,19 @@
 
         _createTip: function () {
             var self = this;
-            var className = "placement-" + this.settings.placement;
+            var placement = this.settings.placement;
+            
+            var reg = /^([a-z]*)([A-Z]\w*)*/;
+            var result = reg.exec(placement);
+
+            var className1 = "placement-" + result[1];
+            var className2 = result[2] ? ' ' + result[2].toLowerCase() + '20' : '';
 
             //表单验证提示html
             var $tip = $("<div class='tooltip'><div class='tooltip-text'></div><div class='tooltip-placement'></div></div>");
             var $text = $tip.find(".tooltip-text");
             var $placement = $tip.find(".tooltip-placement");
-            $placement.addClass(className);
+            $placement.addClass(className1 + className2);
 
             self.settings.html ? $text.html(self.settings.message) : $text.text(self.settings.message);
             

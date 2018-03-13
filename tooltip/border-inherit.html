@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container1 {
+            color: #000000;
+            border: 1px solid blue;
+        }
+        .container1 .icon {
+            width: 0px;
+            height: 0px;
+            border: 30px solid transparent;
+            border-bottom-color: inherit;
+        }
+        .container2 {
+            color: #000000;
+        }
+        .container2 .icon {
+            width: 0px;
+            height: 0px;
+            border: 30px solid transparent;
+            border-bottom-color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- border inherit 首先会继承自父元素的 border 属性 -->
+    <div class="container container1">
+        <div class="content"></div>
+        <div class="icon"></div>
+    </div>
+
+    <!-- 父元素没有 border 属性时，子元素的 border-color 会继承自父元素的 color 属性 -->
+    <div class="container container2">
+        <div class="content"></div>
+        <div class="icon"></div>
+    </div>
+
+</body>
+
+</html>

@@ -6,7 +6,6 @@
     z-index: 9;
     height: auto;
     max-width: 200px;
-    /* display: none; */
 }
 
 .tooltip-text {
@@ -31,24 +30,28 @@
     top: 50%;
     margin-top: -5px;
     margin-left: -10px;
+    border-right-color: inherit;
 }
 .placement-left {
     right: 0;
     top: 50%;
     margin-top: -5px;
     margin-right: -10px;
+    border-left-color: inherit;
 }
 .placement-top {
     left: 50%;
     bottom: 0;
     margin-bottom: -10px;
     margin-left: -5px;
+    border-top-color: inherit;
 }
 .placement-bottom {
     left: 50%;
     top: 0;
     margin-top: -10px;
     margin-left: -5px;
+    border-bottom-color: inherit;
 }
 
 /* theme */
@@ -56,34 +59,34 @@
     background-color: #000;
     color: #FFF;
 }
-
-.placement-right {
-    border-right-color: #000;
-}
-.placement-left {
-    border-left-color: #000;
-}
-.placement-top {
-    border-top-color: #000;
-}
-.placement-bottom {
-    border-bottom-color: #000;
+.tooltip {
+    color: #000;
 }
 /* theme2 */
 .tooltip-text {
     background-color: lightblue;
     color: blue;
 }
+.tooltip {
+    color: lightblue;
+}
 
-.placement-right {
-    border-right-color: lightblue;
+
+/* ================================= */
+
+.left20 {
+    right: auto;
+    left: 20%;
 }
-.placement-left {
-    border-left-color: lightblue;
+.right20 {
+    left: auto;
+    right: 20%;
 }
-.placement-top {
-    border-top-color: lightblue;
+.top20 {
+    bottom: auto;
+    top: 30%;
 }
-.placement-bottom {
-    border-bottom-color: lightblue;
+.bottom20 {
+    top: auto;
+    bottom: 20%;
 }

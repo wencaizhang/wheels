@@ -9,7 +9,7 @@
         #div1 {
             width: 200px;
             height: 150px;
-            margin: 100px auto;
+            margin: 0 auto;
             position: relative;
         }
 
@@ -43,11 +43,14 @@
 
         .demo {
             font-size: 0;
+            width: 400px;
+            margin: 100px auto 50px;
         }
+
         .demo button {
             display: inline-block;
             text-align: center;
-            width: 110px;
+            width: 70px;
             height: 32px;
             margin-right: 10px;
             margin-bottom: 8px;
@@ -62,19 +65,20 @@
             border-radius: 4px;
             background: #fff;
         }
-        /* .demo button:focus {
-            border-width: 1px;
-        } */
+
         .demo-top,
         .demo-bottom {
-            margin-left: 120px;
+            margin-left: 80px;
         }
+
         .demo-left {
             float: left;
         }
+
         .demo-right {
-            margin-left: 480px;
+            margin-left: 320px;
         }
+
         .demo-left button,
         .demo-right button {
             display: block;
@@ -85,24 +89,24 @@
 <body>
     <div class="demo">
         <div class="demo-top">
-            <button>topLeft</button>
-            <button>top</button>
-            <button>topRight</button>
+            <button data-msg="topLeft" data-placement="topLeft">TL</button>
+            <button data-msg="top" data-placement="top">Top</button>
+            <button data-msg="topRight" data-placement="topRight">TR</button>
         </div>
         <div class="demo-left">
-            <button>leftTop</button>
-            <button>left</button>
-            <button>leftButton</button>
+            <button data-msg="leftTop" data-placement="leftTop">LT</button>
+            <button data-msg="left" data-placement="left">Left</button>
+            <button data-msg="leftBottom" data-placement="leftBottom">LB</button>
         </div>
         <div class="demo-right">
-            <button>rightTop</button>
-            <button>right</button>
-            <button>rightBottom</button>
+            <button data-msg="rightTop" data-placement="rightTop">RT</button>
+            <button data-msg="right" data-placement="right">Right</button>
+            <button data-msg="rightBottom" data-placement="rightBottom">RB</button>
         </div>
         <div class="demo-bottom">
-            <button>bottomLeft</button>
-            <button>bottom</button>
-            <button>bottomRight</button>
+            <button data-msg="bottomLeft" data-placement="bottomLeft">BL</button>
+            <button data-msg="bottom" data-placement="bottom">Bottom</button>
+            <button data-msg="bottomRight" data-placement="bottomRight">BR</button>
         </div>
     </div>
     <div id="div1">
@@ -121,31 +125,11 @@
             </li>
         </ul>
     </div>
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="./scripts/tooltip.js"></script>
     <script>
         var message = ["此项目不能为空", "您填写的邮箱地址不正确", "两次密码输入不一致"];
-        // Tooltip('#input1', {
-        //     message: '请输入用户名',
-        //     trigger: 'focus',
-        //     placement: 'top',
-        //     bgColor: 'red'
-        // })
-        // Tooltip('#input2', {
-        //     message: '请输入密码',
-        //     trigger: 'focus',
-        //     placement: 'right'
-        // })
-        // Tooltip('#input3', {
-        //     message: 'Hello World',
-        //     trigger: 'focus',
-        //     placement: 'left'
-        // })
-        // Tooltip('#input4', {
-        //     message: 'Hello World',
-        //     trigger: 'focus',
-        //     placement: 'bottom'
-        // })
+
         $('#input1').Tooltip({
             message: '请输入用户名',
             trigger: 'focus',
@@ -156,12 +140,12 @@
             message: '<h1>请输入密码</h1>',
             trigger: 'focus',
             html: true,
-            placement: 'right'
+            placement: 'rightBottom'
         })
         $('#input3').Tooltip({
             message: 'Hello World',
             trigger: 'focus',
-            placement: 'left'
+            placement: 'leftBottom'
         })
         $('#input4').Tooltip({
             message: 'Hello World',
@@ -172,6 +156,13 @@
             $(this).Tooltip({
                 message: $(this).attr('data-msg'),
                 placement: 'left',
+                trigger: 'click'
+            })
+        })
+        $("button").each(function () {
+            $(this).Tooltip({
+                message: $(this).attr('data-msg'),
+                placement: $(this).attr('data-placement'),
                 trigger: 'click'
             })
         })
