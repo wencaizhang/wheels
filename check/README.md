@@ -1,41 +1,43 @@
-# s
+# 单选复选按钮
 
 ## 技巧说明
 
 ### 选择器
 
-1. 属性选择器（兼容性：IE7+）
++ 属性选择器（兼容性：IE7+）
 
 ```css
 input[type="radio"]
 ```
 
 选择 `type` 属性值为 `radio` 的 `input` 元素
-2. 相邻兄弟选择器（兼容性：IE7+）
++ 相邻兄弟选择器（兼容性：IE7+）
 
 ```css
 input[type="radio"]+label
 ```
 
 选择紧接在 `type` 属性值为 `radio` 的 `input` 元素之后的 `label` 元素
-3. `:checked` 伪类选择器（兼容性：IE9+）
++ `:checked` 伪类选择器（兼容性：IE9+）
 
 ```css
 input[type="radio"]:checked
 ```
 
 选择被选中的 `type` 属性值为 `radio` 的 `input` 元素
-4. `::before` 伪元素（兼容性：IE9+）
++ `::before` 伪元素（兼容性：IE9+）
 
 ```css
 label::before
 ```
 
 创建一个伪元素，其将成为匹配选中的元素（`label` 元素）的第一个子元素
-5. 相关链接
-[属性选择器](http://www.w3school.com.cn/css/css_syntax_attribute_selector.asp)
-[相邻兄弟选择器](http://www.w3school.com.cn/css/css_selector_adjacent_sibling.asp)
-[:checked 伪类选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:checked)
+
++ 相关链接
+
+	- [属性选择器](http://www.w3school.com.cn/css/css_syntax_attribute_selector.asp)
+	- [相邻兄弟选择器](http://www.w3school.com.cn/css/css_selector_adjacent_sibling.asp)
+	- [:checked 伪类选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:checked)
 
 ## 使用示例
 
