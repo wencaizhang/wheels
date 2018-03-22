@@ -37,7 +37,7 @@ label::before
 
 	- [属性选择器](http://www.w3school.com.cn/css/css_syntax_attribute_selector.asp)
 	- [相邻兄弟选择器](http://www.w3school.com.cn/css/css_selector_adjacent_sibling.asp)
-	- [:checked 伪类选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:checked)
+	- [`:checked` 伪类选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:checked)
 
 ## 使用示例
 

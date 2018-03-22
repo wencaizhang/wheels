@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>开关按钮 switch</title>
     <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
         .demo {
             width: 500px;
             margin: 50px auto;
@@ -14,28 +18,27 @@
 
         /* =============== */
 
-        .chooseBtn {
+        .switch-container input[type="checkbox"] {
             display: none;
         }
 
-        .choose-label {
-            box-shadow: #ccc 0px 0px 0px 1px;
+        .switch-container label {
+            display: inline-block;
             width: 80px;
             height: 40px;
-            display: inline-block;
+            border: 1px solid #ccc;
             border-radius: 40px;
             position: relative;
             background-color: #bdbdbd;
             overflow: hidden;
         }
 
-        .choose-label:before {
-            content: '';
+        .switch-container label:before {
             position: absolute;
             left: 0;
+            content: '';
             width: 40px;
             height: 40px;
-            display: inline-block;
             border-radius: 40px;
             background-color: #fff;
             z-index: 40;
@@ -43,33 +46,35 @@
             transition: all 0.5s;
         }
 
-        .chooseBtn:checked+label.choose-label:before {
+        .switch-container input[type="checkbox"]:checked + label {
+            background-color: #51ccee;
+            border: 1px solid #51ccee;
+        }
+
+        .switch-container input[type="checkbox"]:checked + label:before {
             left: 40px;
         }
 
-        .chooseBtn:checked+label.choose-label {
-            background-color: #51ccee;
-        }
 
         /* ======================== */
 
-        #toggle-button {
+        /* .switch-container input[type="checkbox"] {
             display: none;
         }
 
-        .button-label {
+        .switch-container label {
             position: relative;
             display: inline-block;
             width: 80px;
             height: 30px;
             background-color: #ccc;
-            box-shadow: #ccc 0px 0px 0px 2px;
+            border: 2px solid #ccc;
             border-radius: 30px;
             overflow: hidden;
             user-select: none;
         }
 
-        .circle {
+        .switch-container .circle {
             position: absolute;
             top: 0;
             left: 0;
@@ -79,44 +84,48 @@
             background-color: #fff;
         }
 
-        .button-label .text {
+        .switch-container label .text {
             line-height: 30px;
             font-size: 18px;
             text-shadow: 0 0 2px #ddd;
         }
 
-        .on {
+        .switch-container label .on {
             color: #fff;
             display: none;
             text-indent: 10px;
         }
 
-        .off {
+        .switch-container label .off {
             color: #fff;
             display: inline-block;
             text-indent: 34px;
         }
 
-        .button-label .circle {
+        .switch-container label .circle {
             left: 0;
             transition: all 0.3s;
+        } */
+
+        /* 选中状态的样式 */
+        
+        /* .switch-container input[type="checkbox"]:checked+label {
+            background-color: #51ccee;
+            border: 2px solid #51ccee;
         }
 
-        #toggle-button:checked+label.button-label .circle {
+        .switch-container input[type="checkbox"]:checked+label .circle {
             left: 50px;
         }
 
-        #toggle-button:checked+label.button-label .on {
+        .switch-container input[type="checkbox"]:checked+label .on {
             display: inline-block;
         }
 
-        #toggle-button:checked+label.button-label .off {
+        .switch-container input[type="checkbox"]:checked+label .off {
             display: none;
-        }
+        } */
 
-        #toggle-button:checked+label.button-label {
-            background-color: #51ccee;
-        }
 
         /* ======================== */
     </style>
@@ -124,18 +133,18 @@
 
 <body>
     <div class="demo">
-        <div class="switch-btn">
-            <input type="checkbox" name="sex" id="male" class="chooseBtn" />
-            <label for="male" class="choose-label"></label>
+        <div class="switch-container">
+            <input type="checkbox" name="sex" id="male" />
+            <label for="male"></label>
         </div>
-        <div class="switch-btn">
-            <input type="checkbox" id="toggle-button" name="switch">
-            <label for="toggle-button" class="button-label">
+        <!-- <div class="switch-container">
+            <input type="checkbox" id="switch-input" name="switch">
+            <label for="switch-input">
                 <span class="circle"></span>
                 <span class="text on">ON</span>
                 <span class="text off">OFF</span>
             </label>
-        </div>
+        </div> -->
     </div>
 </body>
 
