@@ -11,23 +11,16 @@
             padding: 0;
             margin: 0;
         }
-
-        li {
-            list-style: none;
+        a {
+            color: #01cd78;
         }
-
-        ul,
-        li {
-            display: inline-block;
+        .options span {
+            padding-right: 10px;
         }
 
         .demo {
-            width: 500px;
+            width: 600px;
             margin: 50px auto;
-        }
-
-        .demo li {
-            padding: 0 10px;
         }
 
         .demo .container {
@@ -150,65 +143,152 @@
         }
 
         /* ===================== */
+                /* ======================== */
+
+        /* === 未选中状态 === */
+
+        .switch-container input[type="checkbox"] {
+            display: none;
+        }
+
+        .switch-container label {
+            position: relative;
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            background-color: #ccc;
+            border: 2px solid #ccc;
+            border-radius: 30px;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        .switch-container .circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        .switch-container label .text {
+            line-height: 30px;
+            font-size: 18px;
+            text-shadow: 0 0 2px #ddd;
+        }
+
+        .switch-container label .on {
+            color: #fff;
+            display: none;
+            text-indent: 10px;
+        }
+
+        .switch-container label .off {
+            color: #fff;
+            display: inline-block;
+            text-indent: 34px;
+        }
+
+        .switch-container label .circle {
+            left: 0;
+            transition: all 0.3s;
+        }
+
+        /* === 选中状态 === */
+
+        .switch-container input[type="checkbox"]:checked+label {
+            background-color: #01cd78;
+            border: 2px solid #01cd78;
+        }
+
+        .switch-container input[type="checkbox"]:checked+label .circle {
+            left: 50px;
+        }
+
+        .switch-container input[type="checkbox"]:checked+label .on {
+            display: inline-block;
+        }
+
+        .switch-container input[type="checkbox"]:checked+label .off {
+            display: none;
+        }
+
+        /* ======================== */
     </style>
 </head>
 
 <body>
     <div class="demo">
         <div class="container radio-container">
-            <span>性别：</span>
-            <ul class="radio-options">
-                <li>
+            <span>（<a href="input-radio.html" target="_blank">单独查看</a>）性别：</span>
+            <span class="radio-options options">
+                <span>
                     <input id="sex-man" type="radio" name="sex" value="1" checked>
                     <label for="sex-man">男</label>
-                </li>
-                <li>
+                </span>
+                <span>
                     <input id="sex-women" type="radio" name="sex" value="0">
                     <label for="sex-women">女</label>
-                </li>
-                <li>
+                </span>
+                <span>
                     <input id="sex-other" type="radio" name="sex" value="-1" disabled>
                     <label for="sex-other">其他</label>
-                </li>
-            </ul>
+                </span>
+            </span>
         </div>
         <div class="container checkbox-container skills">
-            <span>技能：</span>
-            <ul class="checkbox-options">
-                <li>
+            <span>（<a href="input-checkbox.html" target="_blank">单独查看</a>）技能：</span>
+            <span class="checkbox-options options">
+                <span>
                     <input id="skill-HTML" type="checkbox" name="skill" value="HTML" checked>
                     <label for="skill-HTML">HTML</label>
-                </li>
-                <li>
+                </span>
+                <span>
                     <input id="skill-CSS" type="checkbox" name="skill" value="CSS">
                     <label for="skill-CSS">CSS</label>
-                </li>
-                <li>
+                </span>
+                <span>
                     <input id="skill-JavaScript" type="checkbox" name="skill" value="JavaScript">
                     <label for="skill-JavaScript">JavaScript</label>
-                </li>
-                <li>
+                </span>
+                <span>
                     <input id="skill-Copy" type="checkbox" name="skill" value="Copy" disabled>
                     <label for="skill-Copy">Copy</label>
-                </li>
-            </ul>
+                </span>
+            </span>
         </div>
         <div class="container checkbox-container interests">
-            <span>兴趣：</span>
-            <ul class="checkbox-options">
-                <li>
+            <span>（<a href="input-checkbox2.html" target="_blank">单独查看</a>）兴趣：</span>
+            <span class="checkbox-options options">
+                <span>
                     <input id="skill-English" type="checkbox" name="skill" value="English">
                     <label for="skill-English">English</label>
-                </li>
-                <li>
+                </span>
+                <span>
                     <input id="skill-Coding" type="checkbox" name="skill" value="Coding" checked>
                     <label for="skill-Coding">Coding</label>
-                </li>
-                <li>
+                </span>
+                <span>
                     <input id="skill-Sleeping" type="checkbox" name="skill" value="Sleeping">
                     <label for="skill-Sleeping">Sleeping</label>
-                </li>
-            </ul>
+                </span>
+                <span>
+                    <input id="skill-Cooking" type="checkbox" name="skill" value="Cooking" disabled>
+                    <label for="skill-Cooking">Cooking</label>
+                </span>
+            </span>
+        </div>
+
+        <div class="switch-container">
+            <span>（<a href="switch-with-text.html" target="_blank">单独查看</a>）单身：</span>
+            <input type="checkbox" id="switch-input" name="switch" checked>
+            <label for="switch-input">
+                <span class="circle"></span>
+                <span class="text on">Yes</span>
+                <span class="text off">No</span>
+            </label>
         </div>
     </div>
 </body>
