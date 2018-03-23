@@ -12,48 +12,59 @@
             margin: 0;
         }
 
-        .switch-container {
+        .container {
             width: 500px;
             margin: 50px auto;
+            text-align: center;
         }
 
-        /* =============== */
+        /* 
+            修改大小时，属性值为 50px, 25px 均需做出相应的改变
+         */
 
-        .switch-container input[type="checkbox"] {
-            display: none;
+        /* === 隐藏原生 checkbox ===*/
+
+        input[type="checkbox"] {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
         }
 
-        .switch-container label {
-            display: inline-block;
-            width: 80px;
-            height: 40px;
-            border: 1px solid #ccc;
-            border-radius: 40px;
+        /* === 未选中 ===*/
+
+        label {
             position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 25px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
             background-color: #bdbdbd;
             overflow: hidden;
         }
 
-        .switch-container label:before {
+        label:before {
             position: absolute;
             left: 0;
             content: '';
-            width: 40px;
-            height: 40px;
-            border-radius: 40px;
+            width: 25px;
+            height: 25px;
+            border-radius: 25px;
             background-color: #fff;
             z-index: 40;
             -webkit-transition: all 0.5s;
             transition: all 0.5s;
         }
 
-        .switch-container input[type="checkbox"]:checked+label {
+        /* === 选中 ===*/
+
+        input[type="checkbox"]:checked+label {
             background-color: #01cd78;
             border: 1px solid #01cd78;
         }
 
-        .switch-container input[type="checkbox"]:checked+label:before {
-            left: 40px;
+        input[type="checkbox"]:checked+label:before {
+            /* right: 0; 没有过渡效果 */
+            left: 25px;
         }
 
         /* ======================== */
@@ -61,7 +72,7 @@
 </head>
 
 <body>
-    <div class="switch-container">
+    <div class="container">
         <input type="checkbox" name="sex" id="male" />
         <label for="male"></label>
     </div>
