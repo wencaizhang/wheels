@@ -8,7 +8,7 @@
 + 通知提示框（弹出层）
 + 日期选择器
 + 分页
-+ 单选框/复选框
++ 单选框/复选框([source](./check), [demo](https://wencaizhang.github.io/wheels/check/index.html))
 + 更多...
 
 ps:
