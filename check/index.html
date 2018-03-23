@@ -11,9 +11,11 @@
             padding: 0;
             margin: 0;
         }
+
         a {
             color: #01cd78;
         }
+
         .options span {
             padding-right: 10px;
         }
@@ -143,7 +145,8 @@
         }
 
         /* ===================== */
-                /* ======================== */
+
+        /* ======================== */
 
         /* === 未选中状态 === */
 
@@ -154,27 +157,28 @@
         .switch-container label {
             position: relative;
             display: inline-block;
-            width: 80px;
-            height: 30px;
+            width: 60px;
+            height: 20px;
             background-color: #ccc;
             border: 2px solid #ccc;
-            border-radius: 30px;
+            border-radius: 20px;
             overflow: hidden;
             user-select: none;
+            vertical-align: bottom;
         }
 
         .switch-container .circle {
             position: absolute;
             top: 0;
             left: 0;
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             background-color: #fff;
         }
 
         .switch-container label .text {
-            line-height: 30px;
+            line-height: 20px;
             font-size: 18px;
             text-shadow: 0 0 2px #ddd;
         }
@@ -182,13 +186,13 @@
         .switch-container label .on {
             color: #fff;
             display: none;
-            text-indent: 10px;
+            text-indent: 6px;
         }
 
         .switch-container label .off {
             color: #fff;
             display: inline-block;
-            text-indent: 34px;
+            text-indent: 26px;
         }
 
         .switch-container label .circle {
@@ -204,7 +208,7 @@
         }
 
         .switch-container input[type="checkbox"]:checked+label .circle {
-            left: 50px;
+            left: 40px;
         }
 
         .switch-container input[type="checkbox"]:checked+label .on {
@@ -222,7 +226,8 @@
 <body>
     <div class="demo">
         <div class="container radio-container">
-            <span>（<a href="input-radio.html" target="_blank">单独查看</a>）性别：</span>
+            <span>（
+                <a href="input-radio.html" target="_blank">单独查看</a>）性别：</span>
             <span class="radio-options options">
                 <span>
                     <input id="sex-man" type="radio" name="sex" value="1" checked>
@@ -239,7 +244,8 @@
             </span>
         </div>
         <div class="container checkbox-container skills">
-            <span>（<a href="input-checkbox.html" target="_blank">单独查看</a>）技能：</span>
+            <span>（
+                <a href="input-checkbox.html" target="_blank">单独查看</a>）技能：</span>
             <span class="checkbox-options options">
                 <span>
                     <input id="skill-HTML" type="checkbox" name="skill" value="HTML" checked>
@@ -260,7 +266,8 @@
             </span>
         </div>
         <div class="container checkbox-container interests">
-            <span>（<a href="input-checkbox2.html" target="_blank">单独查看</a>）兴趣：</span>
+            <span>（
+                <a href="input-checkbox2.html" target="_blank">单独查看</a>）兴趣：</span>
             <span class="checkbox-options options">
                 <span>
                     <input id="skill-English" type="checkbox" name="skill" value="English">
@@ -282,7 +289,8 @@
         </div>
 
         <div class="switch-container">
-            <span>（<a href="switch-with-text.html" target="_blank">单独查看</a>）单身：</span>
+            <span>（
+                <a href="switch-with-text.html" target="_blank">单独查看</a>）单身：</span>
             <input type="checkbox" id="switch-input" name="switch" checked>
             <label for="switch-input">
                 <span class="circle"></span>
