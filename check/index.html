@@ -35,7 +35,7 @@
 
         /* ===================== */
 
-        input[type="radio"]+label::before {
+        .container input[type="radio"]+label::before {
             content: "\a0";
             /*不换行空格*/
             display: inline-block;
@@ -53,22 +53,22 @@
             padding: .3em;
         }
 
-        input[type="radio"]:checked+label::before {
+        .container input[type="radio"]:checked+label::before {
             background-color: #01cd78;
             background-clip: content-box;
         }
 
-        input[type="radio"] {
+        .container input[type="radio"] {
             position: absolute;
             clip: rect(0, 0, 0, 0);
         }
 
-        input[type="radio"]:disabled+label {
+        .container input[type="radio"]:disabled+label {
             cursor: not-allowed!important;
             color: #e2e2e2;
         }
 
-        input[type="radio"]:disabled+label::before {
+        .container input[type="radio"]:disabled+label::before {
             border-color: #e2e2e2;
             cursor: not-allowed;
         }
@@ -134,12 +134,12 @@
             clip: rect(0, 0, 0, 0);
         }
 
-        input[type="checkbox"]:disabled+label {
+        .container input[type="checkbox"]:disabled+label {
             cursor: not-allowed!important;
             color: #e2e2e2;
         }
 
-        input[type="checkbox"]:disabled+label::before {
+        .container input[type="checkbox"]:disabled+label::before {
             border-color: #e2e2e2;
             cursor: not-allowed;
         }
@@ -220,13 +220,64 @@
         }
 
         /* ======================== */
+
+        .city-container {
+            font-size: 0;
+        }
+
+        .city-container input {
+            display: none;
+        }
+
+        .city-container label {
+            margin: 0;
+            height: 32px;
+            line-height: 30px;
+            color: rgba(0, 0, 0, 0.65);
+            display: inline-block;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #d9d9d9;
+            border-left: 0;
+            border-top-width: 1.02px;
+            font-size: 16px;
+            background: #fff;
+            padding: 0 15px;
+            position: relative;
+        }
+
+        .city-container > span span:first-child label {
+            border-radius: 4px 0 0 4px;
+            border-left: 1px solid #d9d9d9;
+        }
+
+        .city-container > span span:last-child label {
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* 选中 */
+
+        .city-container > span span:first-child input[type="radio"]:checked+label {
+            box-shadow: none !important;
+        }
+
+        .city-container input[type="radio"]:checked+label {
+            border-color: #01cd78;
+            color: #01cd78;
+            -webkit-box-shadow: -1px 0 0 0 #01cd78;
+            box-shadow: -1px 0 0 0 #01cd78;
+        }
+
+        /* ======================== */
     </style>
 </head>
 
 <body>
     <div class="demo">
         <div class="container radio-container">
-            <span>（<a href="input-radio.html" target="_blank">单独查看</a>）性别：</span>
+            <span>（
+                <a href="input-radio.html" target="_blank">单独查看</a>）性别：</span>
             <span class="radio-options options">
                 <span>
                     <input id="sex-man" type="radio" name="sex" value="1" checked>
@@ -243,7 +294,8 @@
             </span>
         </div>
         <div class="container checkbox-container skills">
-            <span>（<a href="input-checkbox.html" target="_blank">单独查看</a>）技能：</span>
+            <span>（
+                <a href="input-checkbox.html" target="_blank">单独查看</a>）技能：</span>
             <span class="checkbox-options options">
                 <span>
                     <input id="skill-HTML" type="checkbox" name="skill" value="HTML" checked>
@@ -264,7 +316,8 @@
             </span>
         </div>
         <div class="container checkbox-container interests">
-            <span>（<a href="input-checkbox2.html" target="_blank">单独查看</a>）兴趣：</span>
+            <span>（
+                <a href="input-checkbox2.html" target="_blank">单独查看</a>）兴趣：</span>
             <span class="checkbox-options options">
                 <span>
                     <input id="skill-English" type="checkbox" name="skill" value="English">
@@ -285,14 +338,34 @@
             </span>
         </div>
 
-        <div class="switch-container">
-            <span>（<a href="switch-with-text.html" target="_blank">单独查看</a>）单身：</span>
+        <div class="container switch-container">
+            <span>（
+                <a href="switch-with-text.html" target="_blank">单独查看</a>）单身：</span>
             <input type="checkbox" id="switch-input" name="switch" checked>
             <label for="switch-input">
                 <span class="circle"></span>
                 <span class="text on">Yes</span>
                 <span class="text off">No</span>
             </label>
+        </div>
+
+        <div class="city-container">
+            <div style="display: inline-block; font-size: 16px;">（
+                <a href="input-radio-button.html" target="_blank">单独查看</a>）居住地：</div>
+            <span>
+                <span>
+                    <input id="hangzhou" type="radio" name="city">
+                    <label for="hangzhou">Hangzhou</label>
+                </span>
+                <span>
+                    <input id="beijing" type="radio" name="city" checked>
+                    <label for="beijing">Beijing</label>
+                </span>
+                <span>
+                    <input id="shanghai" type="radio" name="city">
+                    <label for="shanghai">Shanghai</label>
+                </span>
+            </span>
         </div>
     </div>
 </body>

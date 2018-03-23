@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 500px;
+            margin: 50px auto;
+            font-size: 0;
+        }
+
+        input {
+            display: none;
+        }
+
+        label {
+            margin: 0;
+            height: 32px;
+            line-height: 30px;
+            color: rgba(0, 0, 0, 0.65);
+            display: inline-block;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #d9d9d9;
+            border-left: 0;
+            border-top-width: 1.02px;
+            font-size: 16px;
+            background: #fff;
+            padding: 0 15px;
+            position: relative;
+        }
+
+        span:first-child label {
+            border-radius: 4px 0 0 4px;
+            border-left: 1px solid #d9d9d9;
+        }
+
+        span:last-child label {
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* 选中 */
+        span:first-child input[type="radio"]:checked+label {
+            box-shadow: none !important;
+        }
+        input[type="radio"]:checked+label {
+            border-color: #01cd78;
+            color: #01cd78;
+            -webkit-box-shadow: -1px 0 0 0 #01cd78;
+            box-shadow: -1px 0 0 0 #01cd78;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span>
+            <input id="hangzhou" type="radio" name="city">
+            <label for="hangzhou">Hangzhou</label>
+        </span>
+        <span>
+            <input id="beijing" type="radio" name="city" checked>
+            <label for="beijing">Beijing</label>
+        </span>
+        <span>
+            <input id="shanghai" type="radio" name="city">
+            <label for="shanghai">Shanghai</label>
+        </span>
+    </div>
+</body>
+
+</html>
