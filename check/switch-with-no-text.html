@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>开关按钮 switch</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .switch-container {
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        /* =============== */
+
+        .switch-container input[type="checkbox"] {
+            display: none;
+        }
+
+        .switch-container label {
+            display: inline-block;
+            width: 80px;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 40px;
+            position: relative;
+            background-color: #bdbdbd;
+            overflow: hidden;
+        }
+
+        .switch-container label:before {
+            position: absolute;
+            left: 0;
+            content: '';
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            background-color: #fff;
+            z-index: 40;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        .switch-container input[type="checkbox"]:checked+label {
+            background-color: #01cd78;
+            border: 1px solid #01cd78;
+        }
+
+        .switch-container input[type="checkbox"]:checked+label:before {
+            left: 40px;
+        }
+
+        /* ======================== */
+    </style>
+</head>
+
+<body>
+    <div class="switch-container">
+        <input type="checkbox" name="sex" id="male" />
+        <label for="male"></label>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>radio and checkbox</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        label {
+            cursor: pointer;
+        }
+
+        .checkbox-options span {
+            padding: 0 10px;
+        }
+
+        /* ===================== */
+
+        /* === 隐藏原生 checkbox ===*/
+
+        input[type="checkbox"] {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        /* === 未选中 ===*/
+
+        input[type="checkbox"]+label::before {
+            content: "\a0";
+            /*不换行空格*/
+            display: inline-block;
+            position: relative;
+            bottom: 0.2em;
+            vertical-align: middle;
+            font-size: 12px;
+            width: 1.3em;
+            height: 1.3em;
+            text-align: center;
+            margin-right: .4em;
+            border: 1px solid #01cd78;
+            text-indent: .15em;
+            line-height: 1.3;
+            color: #fff;
+        }
+
+        /* === 选中 ===*/
+
+        input[type="checkbox"]:checked+label::before {
+            content: "\2714";
+            background-clip: content-box;
+            background-color: #01cd78;
+        }
+
+        /* === 禁用 ===*/
+
+        input[type="checkbox"]:disabled+label {
+            cursor: not-allowed!important;
+            color: #e2e2e2;
+        }
+
+        input[type="checkbox"]:disabled+label::before {
+            border-color: #e2e2e2;
+            cursor: not-allowed;
+        }
+
+        /* ===================== */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span>兴趣：</span>
+        <span class="checkbox-options">
+            <span>
+                <input id="skill-English" type="checkbox" name="skill" value="English">
+                <label for="skill-English">English</label>
+            </span>
+            <span>
+                <input id="skill-Coding" type="checkbox" name="skill" value="Coding" checked>
+                <label for="skill-Coding">Coding</label>
+            </span>
+            <span>
+                <input id="skill-Sleeping" type="checkbox" name="skill" value="Sleeping">
+                <label for="skill-Sleeping">Sleeping</label>
+            </span>
+            <span>
+                <input id="skill-Cooking" type="checkbox" name="skill" value="Cooking" disabled>
+                <label for="skill-Cooking">Cooking</label>
+            </span>
+        </span>
+    </div>
+</body>
+
+</html>

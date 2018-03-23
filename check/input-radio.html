@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>radio and checkbox</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        label {
+            cursor: pointer;
+        }
+
+        .radio-options span {
+            padding: 0 10px;
+        }
+
+        /* === 隐藏原生 radio === */
+
+        input[type="radio"] {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        /* === 未选中 === */
+
+        input[type="radio"]+label::before {
+            content: "\a0";
+            /*不换行空格*/
+            display: inline-block;
+            position: relative;
+            bottom: 0.1em;
+            vertical-align: middle;
+            font-size: 12px;
+            width: 1em;
+            height: 1em;
+            margin-right: .4em;
+            border-radius: 50%;
+            border: 1px solid #01cd78;
+            text-indent: .15em;
+            line-height: 1;
+            padding: .3em;
+        }
+
+        /* === 选中 === */
+
+        input[type="radio"]:checked+label::before {
+            background-color: #01cd78;
+            background-clip: content-box;
+        }
+
+        /* === 禁用 === */
+
+        input[type="radio"]:disabled+label {
+            cursor: not-allowed!important;
+            color: #e2e2e2;
+        }
+
+        input[type="radio"]:disabled+label::before {
+            border-color: #e2e2e2;
+            cursor: not-allowed;
+        }
+
+        /* ===================== */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span>性别：</span>
+        <span class="radio-options">
+            <span>
+                <input id="sex-man" type="radio" name="sex" value="1" checked>
+                <label for="sex-man">男</label>
+            </span>
+            <span>
+                <input id="sex-women" type="radio" name="sex" value="0">
+                <label for="sex-women">女</label>
+            </span>
+            <span>
+                <input id="sex-other" type="radio" name="sex" value="-1" disabled>
+                <label for="sex-other">其他</label>
+            </span>
+        </span>
+    </div>
+</body>
+
+</html>
