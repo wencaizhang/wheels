@@ -28,4 +28,4 @@ new Contextmenu(data);
 + [示例1](https://wencaizhang.github.io/wheels/contextmenu/contextmenu.html)
 + [示例2](https://wencaizhang.github.io/wheels/contextmenu/contextmenu-oo.html)
 
-两个例子在写法上有所不同，[示例1](https://wencaizhang.github.io/wheels/contextmenu/contextmenu.html)为面向过程写法，[示例2](https://wencaizhang.github.io/wheels/contextmenu/contextmenu-oo.html)为改进版，使用面向对象写法思想改进。
+两个例子在写法上有所不同，[示例1](https://wencaizhang.github.io/wheels/contextmenu/contextmenu.html)为面向过程写法，[示例2](https://wencaizhang.github.io/wheels/contextmenu/contextmenu-oo.html)使用面向对象写法对其改进。
