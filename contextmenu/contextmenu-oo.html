@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>自定义鼠标右键菜单</title>
+  <link rel="stylesheet" href="./main.css">
   <style>
     /* reset */
 
@@ -32,66 +33,54 @@
     }
     /* reset */
 
-    #contextmenu {
-      position: fixed;
-      /* display: inline-block; */
-      display: none;
-      padding: 2px 0;
-      border: 1px solid #ccc;
-      background-color: #fff;
-      cursor: default;
-      font-size: 14px;
-    }
 
-    #contextmenu li {
-      padding: 2px 10px 2px 20px;
-    }
-
-    #contextmenu li.divider {
-      margin: 3px 3px;
-      padding: 0;
-      background-color: #f2f2f2;
-      height: 1px;
-    }
-
-    #contextmenu li.disabled {
-      color: #ccc;
-    }
-
-    #contextmenu li.disabled:hover {
-      background-color: #fff;
-    }
-
-    #contextmenu li:hover {
-      background-color: #eee;
-    }
   </style>
 </head>
 
 <body>
   <h1>尝试一下点击鼠标右键 :)</h1>
+
   <p><span>您选择的右键操作是：</span><span class="handler">暂无操作</span></p>
+  
   <script src="./contextmenu.js"></script>
   <script>
     var handler = document.querySelector('.handler');
     var menuData = [
       {
         text: '查看',
-        divider: true,
         callback: function () {
           handler.innerHTML = '查看';
         },
       }, {
-        text: '移至顶部',
-        disabled: true,
-        callback: function () {
-          handler.innerHTML = '移至底部';
-        },
-      }, {
-        text: '移至底部',
+        text: '新窗口打开',
         divider: true,
         callback: function () {
-          handler.innerHTML = '移至底部';
+          handler.innerHTML = '新窗口打开';
+        },
+      }, {
+        text: '删除',
+        divider: true,
+        disabled: true,
+        callback: function () {
+          handler.innerHTML = '删除';
+        },
+      }, {
+        text: '移动到',
+        children: [
+          { text: '查看',
+            callback: function () {
+              handler.innerHTML = '查看';
+            },
+          }, {
+            text: '新窗口打开',
+            divider: true,
+            callback: function () {
+              handler.innerHTML = '新窗口打开';
+            },
+          }
+        ],
+        callback: function () {
+          handler.innerHTML = '移动到';
         },
       }, {
         text: '啥也不干',

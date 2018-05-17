@@ -3,7 +3,6 @@
   function Contextmenu(menuData) {
     var self = this;
     self.menuData = menuData;
-
     self.renderUI();
     self.bindClickEvent();
     self.bindMenuEvent();
@@ -14,13 +13,15 @@
     var menuData = self.menuData;
     var htmlArr = menuData.map(function (item, index) {
       var className = item.disabled ? 'disabled' : '';
-      var dividerHtml = '<li class="menu-item divider"></li>';
-      var optionHtml = '<li class="menu-item ' + className + '" data-key="' + index + '">' + item.text + '</li>';
+      var dividerHtml = '<div class="divider"></div>';
+      var iconHtml = item.children instanceof Array ? '<span class="icon-select"></span>' : '';
+      var optionHtml = '<li class="menu-item ' + className + '" data-key="' + index + '">' + item.text + iconHtml + '</li>';
       return item.divider ? optionHtml + dividerHtml : optionHtml;
     });
     var html = htmlArr.join('');
     self.menu = document.createElement('div');
     self.menu.setAttribute('id', 'contextmenu');
+    self.menu.classList.add('menudn');
     self.menu.innerHTML = html;
     document.body.appendChild(self.menu);
   }
@@ -37,10 +38,21 @@
     });
   }
 
+  Contextmenu.prototype.toggleShowMenu = function () {
+    var menu = this.menu;
+    if (window.getComputedStyle(menu).display === 'none') {
+      menu.classList.add('menudib');
+      menu.classList.remove('menudn');
+    } else {
+      menu.classList.add('menudn');
+      menu.classList.remove('menudib');
+    }
+  }
+
   Contextmenu.prototype.bindMenuEvent = function () {
     var self = this;
     document.addEventListener('click', function () {
-      self.menu.style.display = 'none';
+      self.toggleShowMenu();
     });
 
     document.addEventListener('contextmenu', function (event) {
@@ -72,7 +84,8 @@
         ? eventPosition.y
         : eventPosition.y - elePosition.y;
 
-      self.menu.style.display = 'inline-block';
+
+      self.toggleShowMenu();
       self.menu.style.left = position.x + 'px';
       self.menu.style.top = position.y + 'px';
 

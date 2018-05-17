@@ -1,0 +1,58 @@
+
+#contextmenu {
+    position: fixed;
+    padding: 0;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    color: #000;
+}
+
+#contextmenu li {
+    padding: 2px 14px;
+    margin: 4px 0;
+}
+
+#contextmenu .divider {
+    margin: 8px 14px;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+    height: 0;
+}
+
+#contextmenu li.disabled {
+    color: #ccc;
+}
+
+#contextmenu li.disabled:hover {
+    background-color: #fff;
+    color: #ccc;
+}
+
+#contextmenu li:hover {
+    background-color: #3470cc;
+    color: #fff;
+}
+#contextmenu li:hover .icon-select {
+    border-left-color: #fff;
+}
+.menudn {
+    display: none;
+}
+.menudib {
+    display: inline-block;
+}
+
+#contextmenu .icon-select {
+    float: right;
+    position: relative;
+    top: 3px;
+    left: 4px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 5px solid #333;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
